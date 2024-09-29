@@ -11,8 +11,11 @@
             "id": "bff479e0c5765104",
             "type": "leaf",
             "state": {
-              "type": "graph",
-              "state": {}
+              "type": "diff-view",
+              "state": {
+                "file": ".obsidian/workspace.json",
+                "staged": false
+              }
             }
           },
           {
@@ -161,8 +164,8 @@
   },
   "active": "bff479e0c5765104",
   "lastOpenFiles": [
-    "learning/clean-code/Glossary.md",
     "learning/clean-code/The Single Responsibility Principle.md",
+    "learning/clean-code/Glossary.md",
     "learning/clean-code/SOLID Foundations.md",
     "learning/clean-code/The Open-Closed Principle.md",
     "learning/clean-code/The Dependency Inversion Principle.md",
