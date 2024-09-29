@@ -4,20 +4,6 @@
     "type": "split",
     "children": [
       {
-        "id": "0c0ee0c80d09aba7",
-        "type": "tabs",
-        "children": [
-          {
-            "id": "6445883d1995a55b",
-            "type": "leaf",
-            "state": {
-              "type": "graph",
-              "state": {}
-            }
-          }
-        ]
-      },
-      {
         "id": "46bfbcf23559b5b7",
         "type": "tabs",
         "children": [
@@ -27,6 +13,18 @@
             "state": {
               "type": "graph",
               "state": {}
+            }
+          },
+          {
+            "id": "a91ae71837e66ce7",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "learning/clean-code/The Single Responsibility Principle.md",
+                "mode": "source",
+                "source": false
+              }
             }
           }
         ]
@@ -161,8 +159,20 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "6445883d1995a55b",
+  "active": "bff479e0c5765104",
   "lastOpenFiles": [
-    "Welcome.md"
+    "learning/clean-code/Glossary.md",
+    "learning/clean-code/The Single Responsibility Principle.md",
+    "learning/clean-code/SOLID Foundations.md",
+    "learning/clean-code/The Open-Closed Principle.md",
+    "learning/clean-code/The Dependency Inversion Principle.md",
+    "learning/clean-code/The Interface Segregation Principle.md",
+    "learning/clean-code/The Liskov Substitution Principle.md",
+    "UNIX/File.md",
+    "Welcome.md",
+    "UNIX",
+    "learning/clean-code/Untitled",
+    "learning/clean-code",
+    "learning"
   ]
 }
