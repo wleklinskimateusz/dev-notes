@@ -59,5 +59,80 @@ This is more important value of software. Without it, it can't live long
 
 If the behavior value is low, and the system is able to change quickly and cheap. Then it may be disappointing at first, but this system can be modified to answer feedback and user are more and more satisfied
 
+## Co-location is coupling
+If we add a method to a class that handles more than one thing, all the classes that depend on that class has to be recompiled and redeployed.
 
 
+## Single Responsibility Principle
+***a module should have one and only one reason to change***
+
+In other words we gather together the things that change for the same reasons and we separate the things that change for different reasons
+
+## Design Flow
+When designing a system we need to: 
+- understand who the actors are
+- identify the responsibilities that serve those actors
+- allocate responsibilities to modules such as each module has one and only one responsibility
+
+## Examples
+
+### create and send message
+
+```java
+private String assembleDirections() {
+	 available = new StringBuffer();
+	 nDirections = directions.size();
+	 directionsPlaced = 0;
+	 for (String dir : new String[]{Game.NORTH, Game.SOUTH, Game.EAST, Game.WEST}) {
+		 if (directions.contains(dir)) {
+			 placeDirections(dir);
+		 }
+	 }
+	 return "You can go " + available.toString() + " from here.";
+}
+
+private void placeDirection(String dir) {
+	directionPlaced++;
+	if (isLastOfMany())
+		available.append(" and ");
+	else if (notFirst())
+		available.append(", ");
+	available.append(directionName(dir));
+}
+```
+
+
+The example above shows a function that create a set of direction and sends this data to the user. Those are two responsibilities
+
+For example if the language of the direction were to change, one of the responsibilities would have to change, and the other not.
+
+### shoot arrow
+```java
+private int shootAsFarAsPossible(String direction, int cavern) {
+	int nextCavern = adjacentTo(direction, cavern);
+	if (nextCavern == 0)
+		return cavern;
+	else {
+		if (nextCavern == wumpusCavern) {
+			wumpusHitByArrow = true;
+			gameTermintated = true;
+			return nextCavern;
+		} else if (nextCavern == playerCavern) {
+			gameTerminated = true;
+			hitByOwnArrow = true;
+			return nextCavern;
+		}
+		return shootAsFarAsPossible(direction, nextCavern);
+	}
+}
+```
+
+You could think that this function has a single responsibility. This is a recursive algorithm that follows the error and reports where it lands. 
+BUT
+it also terminates the game. And those are two responsibilities. One is policy and the other is mechanics. Those should live in different modules
+
+### Logging
+But what about the situation when we have a need to create logs of our program?
+Clearly logging is its own responsibility, but how can we possibly separate this from the code?
+
+The answer is, we should divide the function into multiple very small functions and ignore logging the messages for now. When we have a base class that does all the logic, we could derive another class from this class and to each function add a logging statement.
