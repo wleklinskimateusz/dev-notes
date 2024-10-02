@@ -98,3 +98,19 @@ Whenever you have a derived class that has degenerate functions in it (functions
 
 More obvious clue is when a derived function is written to unconditionally throw an exception. This is clearly a violation of LSP as the author doesn't want anyone to call this function
 
+
+## The modem problem
+
+Consider a system in which a very old suite of programs called the file movers move files around the network using modems
+
+So we have `FileMover`  main Program that uses abstract interface `Modem<I>` that is an abstraction for different types of modems
+
+`Modem` interface has methods like `Dial`, `Hangup`, `Send`, and `Receive` - But new requirement has been added - to include model that don't need to be dialed. They are permanently connected. So we have `DedModem` (Dedicated Modem) class that has only `Send` and `Receive` methods.
+
+The easiest thing to make it work is to derive `DedModem` from the `Modem` interface. But for that to work we will have to create empty `Dial` and `Receive` methods that do nothing.
+
+But this is a change in behavior! The class `FileMovers` doesn't know that those function do nothing and may base its behavior on the assumption that it does. It can lead to weird functionality
+
+Clearly LSP violation. and we have complicated system for both Dedicated modem users in application and for `FileMover` class. 
+
+The possible solution is to use Adapter that is an abstraction connecting `Modem` interface and `DedModem` class
