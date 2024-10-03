@@ -126,3 +126,10 @@ public class AddTimeCardUseCase implements UseCase {
 	}
 }
 ```
+
+### Union Membership
+We have also the issue of `UnionMembership`. We can have the interface that has all of the methods for handling `Union` membership. But two types of classes would have to implement that interface `Member` and `NonMember`. so `NonMember` would have to create all of those functions that are required - but keep them empty. '
+That smells like Liskov Substitution violation. But when a class has all methods empty this is a special case - null object pattern. 
+
+
+
