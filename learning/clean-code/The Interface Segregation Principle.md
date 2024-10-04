@@ -1,3 +1,4 @@
+# The Interface Segregation Principle
 #SOLID
 
 >don't depend on the things you don't need ~ the Interface Segregation Principle
