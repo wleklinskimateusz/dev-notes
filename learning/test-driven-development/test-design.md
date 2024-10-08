@@ -1,4 +1,5 @@
 # Test Design
+#testing
 
 Test shouldn't know to much about implementation. So you should test the behavior and not how it is implemented
 
@@ -8,8 +9,7 @@ If you applied a small change to the production code and test start to break all
 
 ### Single Responsibility in tests
 
-as a general rule one test file should test one class which should align with one responsibility 
-(if class has one responsibility too)
+as a general rule one test file should test one class which should align with one responsibility (if class has one responsibility too)
 
 ### Open/Closed principle
 
