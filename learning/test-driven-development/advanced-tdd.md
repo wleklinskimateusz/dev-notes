@@ -3,7 +3,8 @@
 ## The Laws of TDD
 
 1. You're not allowed to write any production code until you've got a unit test failing
-2. Don't write more tests then it is sufficient to fail even if that failure is just the failure to compile (move to writing production code that will make this test pass)
+2. Don't write more tests then it is sufficient to fail even if that failure is just the failure to compile
+(move to writing production code that will make this test pass)
 3. Stop writing production code as soon as test passes and then go back to writing tests
 
 Remember to refactor frequently
@@ -19,7 +20,8 @@ Remember to refactor frequently
 Every unit test should be broken up into those three parts
 **Arrange** is setting up the test
 **Act** is calling a function to be tested
-**Assertion** is testing if the result are what we aspect. This is a logical assertion, not necessarily an assertion call (so we can have multiple assertion calls in one logical assertion)
+**Assertion** is testing if the result are what we aspect. This is a logical assertion,
+not necessarily an assertion call (so we can have multiple assertion calls in one logical assertion)
 
 ## Incremental Algorithmics
 
@@ -35,4 +37,5 @@ you're stuck if there's nothing incremental you can do to pass the currently fai
 >A: Either you wrote the wrong test, or making the production code too specific (or both)
 
 Soo, how no to get stuck?
-best idea is to write test in such a way that they force you to introduce complexity gradually. (So start from simple, degenerate examples, and step by step move to something more challenging)
+best idea is to write test in such a way that they force you to introduce complexity gradually.
+(So start from simple, degenerate examples, and step by step move to something more challenging)

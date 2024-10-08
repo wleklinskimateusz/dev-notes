@@ -40,13 +40,18 @@ Three approaches:
 - Persistent Fresh (survives from test to test but is initialized in the every test)
 - Persistent Shared (allows some test to accumulate from test to test)
 
-So in the world where we use `Transient Fresh` approach, we won't need any `teardown` function (`afterEach`) because each time we use entirely new state.
+So in the world where we use `Transient Fresh` approach, we won't need any `teardown` function (`afterEach`)
+because each time we use entirely new state.
 
-If we need a shared state between multiple tests we would need to have `beforeAll` and `afterAll` those methods would be good to open/close database connections (because it can be expensive to open close before/after each test)
+If we need a shared state between multiple tests we would need to have `beforeAll` and `afterAll`
+those methods would be good to open/close database connections
+(because it can be expensive to open close before/after each test)
 
 ## Test Hierarchy
 
-In some test framework you can nest or group tests and create setup and teardown function for only that group. Those can be nested and ideally you want have to create lots of functions that setup differently depending on what you want. (JS test frameworks do this for example)
+In some test framework you can nest or group tests and create setup and teardown function for only that group.
+Those can be nested and ideally you want have to create lots of functions that setup differently
+depending on what you want. (JS test frameworks do this for example)
 
 ```typescript
 describe("some test", () => {
@@ -78,7 +83,8 @@ Java has many problems with it, it is weird (There is a workaround but never min
 
 usually a single function that is being tested. So this phase is just a call of this function
 
-if you're writing code in functional style that you always need one function call, but if you mutate data inside and you want to test the state change after multiple functions that you must call multiple functions
+if you're writing code in functional style that you always need one function call, but if you mutate data inside
+and you want to test the state change after multiple functions that you must call multiple functions
 
 ## The Assert
 
