@@ -81,4 +81,14 @@ Additional CPU cost and increased latency; no guarantee of exact order (just str
 ### Other Properties
 Lazy Queues, Dead Letter Queues and many more
 
+## Queue order
+Queues are FIFO manner - **in terms of producer** (messages are always held in the queue in publication order), but **not in terms of consumer**
+
+There a some conditions that has to be met in order to guarantee order of consuming messages:
+- messages published in one channel
+- passing though one exchange
+- stored in one queue
+- consumed by exactly one outgoing channel
+
+
 
